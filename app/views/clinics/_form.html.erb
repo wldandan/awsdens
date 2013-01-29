@@ -1,0 +1,42 @@
+<%= form_for @clinic, :html => { :class => "form-horizontal"} do |f| %>
+  <% if @clinic.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@clinic.errors.count, "error") %> prohibited this clinic from being saved:</h2>
+
+      <ul>
+      <% @clinic.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :name, "诊所名称:",:class=>"control-label" %>
+    <div class="controls"> <%= f.text_field :name %> </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :full_name, "诊所全称:", :class=>"control-label"%>
+    <div class="controls"><%= f.text_field :full_name %> </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :address, "诊所地址:", :class=>"control-label"%>
+    <div class="controls"> <%= f.text_field :address %> </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :phone, "诊所电话:", :class=>"control-label"%>
+    <div class="controls"> <%= f.text_field :phone %> </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :description, "描述信息:", :class=>"control-label"%>
+    <div class="controls"><%= f.text_area :description, :rows=>"3" %></div>
+  </div>
+
+  <div class="control-group">
+    <div class="controls">
+    <%= submit_tag "保存",:class => "btn btn-small"%>
+    <%= link_to '取消', clinics_path, :class=>'btn btn-small' %>
+    </div>
+  </div>
+    
+<% end %>

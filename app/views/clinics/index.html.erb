@@ -1,0 +1,29 @@
+
+
+<%= link_to '添加诊所', new_clinic_path , :class=>"btn active btn-info"%>
+
+<br/><br/>
+
+<table class="table table-bordered">
+  <tr>
+    <th>诊所名称</th>
+    <th>诊所地址</th>
+    <th>诊所电话</th>
+    <th></th>
+  </tr>
+
+<% @clinics.each do |clinic| %>
+  <tr>
+    <td><%= clinic.name %></td>
+    <td><%= clinic.address %></td>
+    <td><%= clinic.phone %></td>
+    <td><%= link_to '查看', clinic, :class=>"btn-mini active btn-info" %>
+    <%= link_to '修改', edit_clinic_path(clinic), :class=>"btn-mini active btn-info" %>
+    <%= link_to '删除', clinic, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn-mini active btn-info" %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+

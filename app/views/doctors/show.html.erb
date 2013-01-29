@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @doctor.name %>
+</p>
+
+<!-- <p>
+  <b>Clinid:</b>
+  <%= @doctor.clinic_id %>
+</p> -->
+
+
+<%= link_to '编辑', edit_clinic_doctor_path(@clinic, @doctor),:class=>'btn btn-small' %> 
+<%= link_to '取消', clinic_path(@clinic),:class=>'btn btn-small' %>
+
