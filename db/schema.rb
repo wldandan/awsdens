@@ -11,7 +11,33 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130128141156) do
+ActiveRecord::Schema.define(:version => 20130129154908) do
+
+  create_table "artifact_type_templates", :force => true do |t|
+    t.string   "name"
+    t.integer  "price"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "artifact_types", :force => true do |t|
+    t.integer  "clinic_id"
+    t.string   "name"
+    t.integer  "price"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "clinic_artifact_types", :force => true do |t|
+    t.integer  "clinic_id"
+    t.string   "name"
+    t.integer  "price"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "clinics", :force => true do |t|
     t.string   "name"
@@ -28,6 +54,16 @@ ActiveRecord::Schema.define(:version => 20130128141156) do
     t.integer  "clinic_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "products", :force => true do |t|
+    t.string   "name"
+    t.integer  "clinic_id"
+    t.string   "doctor_id"
+    t.string   "responser"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
 end

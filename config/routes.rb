@@ -1,7 +1,11 @@
 Awsdens::Application.routes.draw do
 
+  resources :products
+
+  resources :artifact_type_templates
+
   resources :clinics do
-    resources :doctors
+    resources :doctors, :artifact_types
   end
 
 

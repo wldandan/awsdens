@@ -11,26 +11,19 @@
         <%= link_to '返回', artifact_type_templates_path , :class=>"btn active btn-info"%>
 
         <dl class="dl-horizontal">
-          <dt><span class="label label-info">医生姓名:</span></dt>
-          <dd><%= @doctor.name %></dd>
+          <dt><span class="label label-info">项目名称:</span></dt>
+          <dd><%= @artifact_type_template.name %></dd>
         </dl>
 
         <dl class="dl-horizontal">
-          <dt><span class="label label-info">所属诊所:</span></dt>
-          <dd><%= @doctor.clinic.name %></dd>
+          <dt><span class="label label-info">项目价格:</span></dt>
+          <dd><%= @artifact_type_template.price %></dd>
+        </dl>
+
+        <dl class="dl-horizontal">
+          <dt><span class="label label-info">描述信息:</span></dt>
+          <dd><%= @artifact_type_template.description %></dd>
         </dl>
 
     </div>    
 </div>
-
-
-
-<!-- <p>
-  <b>Clinid:</b>
-  <%= @doctor.clinic_id %>
-</p> 
-
-
-<%= link_to '编辑', edit_clinic_doctor_path(@clinic, @doctor),:class=>'btn btn-small' %> 
-<%= link_to '取消', clinic_path(@clinic),:class=>'btn btn-small' %>
--->

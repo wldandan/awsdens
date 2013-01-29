@@ -1,0 +1,43 @@
+<%= form_for [@clinic, @artifact_type], :html => { :class => "form-horizontal"} do |f| %>
+  <% if @artifact_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@artifact_type.errors.count, "error") %> prohibited this artifact_type from being saved:</h2>
+
+      <ul>
+      <% @artifact_type.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+  <div class="control-group">
+    <%= f.label :name, "项目名称:",:class=>"control-label" %>
+    <div class="controls"> <%= f.text_field :name %> </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :price, "项目价格:",:class=>"control-label" %>
+    <div class="controls"> <%= f.number_field :price %> </div>
+  </div>
+
+<!--   <div class="control-group">
+    <%= f.label :description, "描述信息:",:class=>"control-label" %>
+    <div class="controls"> <%= f.text_area :description %> </div>
+  </div>
+ -->
+<!--   <div class="actions">
+    <%= f.submit %>
+  </div>
+ -->
+  <div class="control-group">
+    <div class="controls">
+    <%= submit_tag "保存",:class => "btn btn-small"%>
+    <%= link_to '取消', edit_clinic_path(@clinic), :class=>'btn btn-small' %>
+    </div>
+  </div>
+
+
+<% end %>

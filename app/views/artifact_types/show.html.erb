@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Clinic:</b>
+  <%= @artifact_type.clinic_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @artifact_type.name %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @artifact_type.price %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @artifact_type.description %>
+</p>
+
+
+<%= link_to '编辑', edit_clinic_artifact_type_path(@clinic, @artifact_type),:class=>'btn btn-small' %> 
+<%= link_to '返回', clinic_path(@clinic),:class=>'btn btn-small' %>

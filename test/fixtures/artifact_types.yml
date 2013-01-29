@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  clinic_id: 1
+  name: MyString
+  price: 1
+  description: MyText
+
+two:
+  clinic_id: 1
+  name: MyString
+  price: 1
+  description: MyText

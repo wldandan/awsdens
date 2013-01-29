@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  clinic_id: 1
+  doctor_id: MyString
+  responser: MyString
+  description: MyText
+
+two:
+  name: MyString
+  clinic_id: 1
+  doctor_id: MyString
+  responser: MyString
+  description: MyText

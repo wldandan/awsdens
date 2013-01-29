@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to '添加项目', new_artifact_type_template_path , :class=>"btn active btn-info"%>
+
+<br/><br/>
+
+<table class="table table-bordered">
+  <tr>
+    <th>项目名称</th>
+    <th>项目价格</th>
+    <th></th>
+  </tr>
+
+<% @artifact_type_templates.each do |artifact| %>
+  <tr>
+    <td><%= artifact.name %></td>
+    <td><%= artifact.price %></td>
+    <td><%= link_to '查看', artifact, :class=>"btn-mini active btn-info" %>
+    <%= link_to '修改', edit_artifact_type_template_path(artifact), :class=>"btn-mini active btn-info" %>
+    <%= link_to '删除', artifact, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn-mini active btn-info" %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+

@@ -6,11 +6,14 @@
   <ul class="nav nav-tabs">
     <li class="active"><a href="#basicInfo" data-toggle="tab">基本信息</a></li>
     <li><a href="#doctors" data-toggle="tab">医生信息</a></li>
-    <li><a href="#productTypes" data-toggle="tab">加工项目</a></li>
+    <li><a href="#artifactTypes" data-toggle="tab">加工项目</a></li>
   </ul>
 
   <div class="tab-content">
     <div class="tab-pane active" id="basicInfo">
+
+        <%= link_to '返回', clinics_path , :class=>"btn active btn-info"%>
+
         <dl class="dl-horizontal">
           <dt><span class="label label-info">诊所简称:</span></dt>
           <dd><%= @clinic.name %></dd>
@@ -39,20 +42,21 @@
         <div class="row">
           <div class="span2"></div>
           <div class="span10">
-            <%= link_to '编辑', edit_clinic_path(@clinic),:class=>'btn btn-small' %> 
-            <%= link_to '取消', clinics_path,:class=>'btn btn-small' %>
+            <!--<%= link_to '编辑', edit_clinic_path(@clinic),:class=>'btn btn-small' %> -->
+            <!-- <%= link_to '返回', clinics_path,:class=>'btn btn-small' %> -->
           </div>  
         </div>
     </div>    
 
     <div class="tab-pane" id="doctors">
-      <%= link_to '添加医生', new_clinic_doctor_path(@clinic) , :class=>"btn active btn-info"%>
+      <!-- <%= link_to '添加医生', new_clinic_doctor_path(@clinic) , :class=>"btn active btn-info"%> -->
+      <%= link_to '返回', clinics_path , :class=>"btn active btn-info"%>
       <br/><br/>
       
         <table class="table table-bordered">
           <tr>
             <th>姓名</th>
-            <th></th>
+            <!-- <th></th> -->
           </tr>
 
         <% @clinic.doctors.each do |doctor| %>
@@ -60,16 +64,38 @@
             <td><%= doctor.name %></td>
             
             
-             <td><%= link_to '查看', clinic_doctor_path(doctor), :class=>"btn-mini active btn-info" %>
+<!--       <td><%= link_to '查看', clinic_doctor_path(doctor), :class=>"btn-mini active btn-info" %>
             <%= link_to '修改', edit_clinic_doctor_path(doctor), :class=>"btn-mini active btn-info" %>
             <%= link_to '删除', [@clinic, doctor], method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn-mini active btn-info" %></td> 
-          </tr>
+ -->          </tr>
         <% end %>
         </table>
     </div>
 
-    <div class="tab-pane" id="productTypes">
-      <p>加工项目信息</p>
+    <div class="tab-pane" id="artifactTypes">
+      <!-- <%= link_to '添加项目', new_clinic_artifact_type_path(@clinic) , :class=>"btn active btn-info"%> -->
+      <%= link_to '返回', clinics_path , :class=>"btn active btn-info"%>
+      <br/><br/>
+      
+        <table class="table table-bordered">
+          <tr>
+            <th>名称</th>
+            <th>单价</th>
+            <!-- <th></th> -->
+          </tr>
+
+        <% @clinic.artifact_types.each do |artifact| %>
+          <tr>
+            <td><%= artifact.name %></td>
+            <td><%= artifact.price %></td>
+
+<!--              <td><%= link_to '查看', clinic_artifact_type_path(artifact), :class=>"btn-mini active btn-info" %>
+            <%= link_to '修改', edit_clinic_artifact_type_path(artifact), :class=>"btn-mini active btn-info" %>
+            <%= link_to '删除', [artifact.clinic, artifact], method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn-mini active btn-info" %></td> 
+ -->          </tr>
+        <% end %>
+        </table>
+
     </div>
 
   </div>
