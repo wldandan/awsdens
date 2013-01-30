@@ -19,6 +19,7 @@
     <td><%= product.clinic.name %></td>
     <td><%= product.doctor.name %></td>
     <td><%= product.responser %></td>
+ 
     <td><%= link_to '查看', product, :class=>"btn-mini active btn-info" %>
     <%= link_to '修改', edit_product_path(product), :class=>"btn-mini active btn-info" %>
     <%= link_to '删除', product, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn-mini active btn-info" %></td>

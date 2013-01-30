@@ -49,7 +49,7 @@ class ClinicsController < ApplicationController
 
     respond_to do |format|
       if @clinic.save
-        format.html { redirect_to @clinic, notice: 'Clinic was successfully created.' }
+        format.html { redirect_to clinics_path, notice: 'Clinic was successfully created.' }
         format.json { render json: @clinic, status: :created, location: @clinic }
       else
         format.html { render action: "new" }

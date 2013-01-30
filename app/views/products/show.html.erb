@@ -1,30 +1,38 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @product.name %>
-</p>
+<div class="tabbable"> <!-- Only required for left/right tabs -->
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#basicInfo" data-toggle="tab">基本信息</a></li>
+  </ul>
 
-<p>
-  <b>Clinic:</b>
-  <%= @product.clinic_id %>
-</p>
+  <div class="tab-content">
+    <div class="tab-pane active" id="basicInfo">
 
-<p>
-  <b>Doctor:</b>
-  <%= @product.doctor_id %>
-</p>
+        <%= link_to '返回', products_path , :class=>"btn active btn-info"%>
 
-<p>
-  <b>Responser:</b>
-  <%= @product.responser %>
-</p>
+        <dl class="dl-horizontal">
+          <dt><span class="label label-info">订单编号:</span></dt>
+          <dd><%= @product.name %></dd>
+        </dl>
 
-<p>
-  <b>Description:</b>
-  <%= @product.description %>
-</p>
+        <dl class="dl-horizontal">
+          <dt><span class="label label-info">所属诊所:</span></dt>
+          <dd><%= @product.clinic.name %></dd>
+        </dl>
+
+        <dl class="dl-horizontal">
+          <dt><span class="label label-info">主治医生:</span></dt>
+          <dd><%= @product.doctor.name %></dd>
+        </dl>
+
+        <dl class="dl-horizontal">
+          <dt><span class="label label-info">描述信息:</span></dt>
+          <dd><%= @product.description %></dd>
+        </dl>
+    </div>    
+</div>
 
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<!--
+# <%= link_to 'Edit', edit_product_path(@product) %> |
+# <%= link_to 'Back', products_path %>-->
